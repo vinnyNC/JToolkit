@@ -1,0 +1,67 @@
+JFDML JFormDesigner: "7.0.3.0.337" Java: "11.0.9.1" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {space :::p, comp scrollPane1::::560:x, space :::x, par l:::p {comp chkAutoInstall::::95:x, comp btnInstall:::::x, comp lblVersion::l::95:x}, space :::x}}"
+			"$verticalGroup": "par l {seq l {space :::p, par l {comp scrollPane1::::490:x, seq l {comp btnInstall:::p::p, space s:::p, comp chkAutoInstall:::p::p, space ::353:x, comp lblVersion::::62:x, space :::x}}}}"
+		} ) {
+			name: "this"
+			"resizable": false
+			"title": "JToolKit"
+			"visible": true
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JList" ) {
+					name: "lstApps"
+					"selectionMode": 0
+				} )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnInstall"
+				"text": "Install"
+			} )
+			add( new FormComponent( "javax.swing.JCheckBox" ) {
+				name: "chkAutoInstall"
+				"text": "Auto Install"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "lblVersion"
+				"text": "No Version Info"
+				"verticalTextPosition": 3
+				auxiliary() {
+					"JavaCodeGenerator.variableGetter": true
+				}
+			} )
+			menuBar: new FormContainer( "javax.swing.JMenuBar", new FormLayoutManager( class javax.swing.JMenuBar ) ) {
+				name: "menuBar1"
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+					name: "menuFile"
+					"text": "File"
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuFileClose"
+						"text": "Exit"
+						addEvent( new FormEvent( "javax.swing.event.MenuKeyListener", "menuKeyPressed", "menuFileCloseMenuKeyPressed", true ) )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuFileCloseActionPerformed", true ) )
+					} )
+				} )
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+					name: "menuHelp"
+					"text": "Help"
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuHelpUpdate"
+						"text": "Update"
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuHelpAbout"
+						"text": "About"
+					} )
+				} )
+			}
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 675, 550 )
+		} )
+	}
+}
